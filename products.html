@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products</title>
+    <!-- tailwind and daisyui -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- favicon -->
+    <link rel="shortcut icon" href="/Assets/logo.png" type="image/x-icon" />
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body class="font-inter">
+    <!-- navbar -->
+    <nav class="fixed bg-base-100 shadow-md w-full z-50">
+      <div class="container w-11/12 mx-auto">
+        <div class="navbar px-0">
+          <!-- Left -->
+          <div class="navbar-start">
+            <div class="dropdown lg:hidden">
+              <label tabindex="0" class="btn btn-ghost">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h8m-8 6h16"
+                  />
+                </svg>
+              </label>
+
+              <ul
+                tabindex="0"
+                class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              >
+                <li><a>Home</a></li>
+                <li><a>Products</a></li>
+                <li><a>About</a></li>
+                <li><a>Contact</a></li>
+              </ul>
+            </div>
+
+            <a href="#home" class="text-2xl font-bold text-indigo-600"
+              >SwiftCart</a
+            >
+          </div>
+
+          <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal space-x-1">
+              <li>
+                <a
+                  href="/index.html"
+                  class="hover:text-indigo-600 font-semibold"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/products.html"
+                  class="hover:text-indigo-600 font-semibold"
+                  >Products</a
+                >
+              </li>
+              <li><a class="hover:text-indigo-600 font-semibold">About</a></li>
+              <li>
+                <a class="hover:text-indigo-600 font-semibold">Contact</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="navbar-end">
+            <button class="btn btn-ghost btn-circle">
+              <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- categories -->
+    <section class="pt-28 pb-16 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-8">Our Products</h2>
+      <!-- btns -->
+      <div
+        id="categoryContainer"
+        class="flex flex-wrap justify-center gap-4 px-4"
+      ></div>
+    </section>
+  </body>
+</html>
