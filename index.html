@@ -33,7 +33,7 @@
 
   <body class="font-inter">
     <!-- navbar -->
-    <nav class="fixed w-full z-50">
+    <nav class="fixed bg-white w-full z-50">
       <div class="container w-11/12 mx-auto">
         <div class="navbar">
           <!-- Left -->
@@ -95,6 +95,37 @@
         </div>
       </div>
     </nav>
+
+    <!-- hero -->
+    <section
+      class="relative min-h-screen flex items-center justify-center text-white"
+    >
+      <div class="absolute inset-0">
+        <img
+          src="/Assets/banner-image.png"
+          alt="Hero"
+          class="w-full h-full object-cover"
+        />
+        <div class="absolute inset-0 bg-black/60"></div>
+      </div>
+
+      <div class="container w-11/12 mx-auto relative z-10 px-4">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6">
+          Best Collection For You
+        </h1>
+
+        <p class="text-lg md:text-xl text-gray-200 max-w-2xl mb-8">
+          Discover the latest trends in fashion, electronics, and more. Shop
+          with confidence and style at SwiftCart.
+        </p>
+
+        <button
+          class="btn bg-indigo-600 hover:bg-indigo-700 border-none text-white px-8"
+        >
+          Shop Now
+        </button>
+      </div>
+    </section>
 
     <script src="js/script.js"></script>
   </body>
