@@ -33,9 +33,9 @@
 
   <body class="font-inter">
     <!-- navbar -->
-    <nav class="fixed bg-white w-full z-50">
+    <nav class="fixed bg-base-100 w-full z-50">
       <div class="container w-11/12 mx-auto">
-        <div class="navbar">
+        <div class="navbar px-0">
           <!-- Left -->
           <div class="navbar-start">
             <div class="dropdown lg:hidden">
@@ -109,7 +109,7 @@
         <div class="absolute inset-0 bg-black/60"></div>
       </div>
 
-      <div class="container w-11/12 mx-auto relative z-10 px-4">
+      <div class="container w-11/12 mx-auto relative z-10">
         <h1 class="text-4xl md:text-6xl font-bold mb-6">
           Best Collection For You
         </h1>
@@ -127,6 +127,76 @@
       </div>
     </section>
 
-    <script src="js/script.js"></script>
+    <!-- choose -->
+    <section class="py-24 bg-base-200">
+      <div class="container w-11/12 mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Why Choose Us</h2>
+        <p class="text-gray-500 max-w-2xl mx-auto mb-16">
+          We provide the best shopping experience with top-notch services.
+        </p>
+
+        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <!-- card 1 -->
+          <div class="relative bg-white p-8 rounded-2xl text-left">
+            <div
+              class="absolute -top-6 left-8 bg-indigo-50 p-4 rounded-xl shadow-md"
+            >
+              <i class="fa-regular fa-truck text-indigo-600"></i>
+            </div>
+            <h3 class="text-lg font-semibold mt-8 mb-3">Fast Delivery</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Get your orders delivered to your doorstep quickly and
+              efficiently.
+            </p>
+          </div>
+
+          <!-- card 2 -->
+          <div class="relative bg-white p-8 rounded-2xl text-left">
+            <div
+              class="absolute -top-6 left-8 bg-indigo-50 p-4 rounded-xl shadow-md"
+            >
+              <i class="fa-regular fa-headphones text-indigo-600"></i>
+            </div>
+
+            <h3 class="text-lg font-semibold mt-8 mb-3">24/7 Support</h3>
+
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Our support team is available around the clock to assist you.
+            </p>
+          </div>
+
+          <!-- card 3 -->
+          <div class="relative bg-white p-8 rounded-2xl text-left">
+            <div
+              class="absolute -top-6 left-8 bg-indigo-50 p-4 rounded-xl shadow-md"
+            >
+              <i class="fa-solid fa-shield-halved text-indigo-600"></i>
+            </div>
+
+            <h3 class="text-lg font-semibold mt-8 mb-3">Secure Payment</h3>
+
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Experience safe and secure transactions with our encrypted payment
+              systems.
+            </p>
+          </div>
+
+          <!-- card 4 -->
+          <div class="relative bg-white p-8 rounded-2xl text-left">
+            <div
+              class="absolute -top-6 left-8 bg-indigo-50 p-4 rounded-xl shadow-md"
+            >
+              <i class="fa-solid fa-arrows-rotate text-indigo-600"></i>
+            </div>
+
+            <h3 class="text-lg font-semibold mt-8 mb-3">Easy Returns</h3>
+
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Not satisfied? Return your products easily within 30 days.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
   </body>
 </html>
