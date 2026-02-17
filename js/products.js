@@ -21,8 +21,43 @@ const displayCategories = (categories) => {
     categoryContainer.appendChild(button);
     button.addEventListener("click", () => {
       activeCategory(button);
+      loadProductsByCategory(category);
     });
   });
+};
+
+const loadProductsByCategory = async (category) => {
+  productsContainer.innerHTML = `
+        <div class="flex w-52 flex-col gap-4">
+  <div class="skeleton h-32 w-full"></div>
+  <div class="skeleton h-4 w-28"></div>
+  <div class="skeleton h-4 w-full"></div>
+  <div class="skeleton h-4 w-full"></div>
+</div>
+<div class="flex w-52 flex-col gap-4">
+  <div class="skeleton h-32 w-full"></div>
+  <div class="skeleton h-4 w-28"></div>
+  <div class="skeleton h-4 w-full"></div>
+  <div class="skeleton h-4 w-full"></div>
+</div>
+<div class="flex w-52 flex-col gap-4">
+  <div class="skeleton h-32 w-full"></div>
+  <div class="skeleton h-4 w-28"></div>
+  <div class="skeleton h-4 w-full"></div>
+  <div class="skeleton h-4 w-full"></div>
+</div>
+    <div class="flex w-52 flex-col gap-4">
+  <div class="skeleton h-32 w-full"></div>
+  <div class="skeleton h-4 w-28"></div>
+  <div class="skeleton h-4 w-full"></div>
+  <div class="skeleton h-4 w-full"></div>
+</div>
+    `;
+  const res = await fetch(
+    `https://fakestoreapi.com/products/category/${category}`,
+  );
+  const products = await res.json();
+  displayProducts(products);
 };
 
 const activeCategory = (button) => {
