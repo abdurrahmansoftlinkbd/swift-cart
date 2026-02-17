@@ -1,5 +1,7 @@
 const categoryContainer = document.getElementById("category-container");
 const productsContainer = document.getElementById("products-container");
+const modal = document.getElementById("product-modal");
+const modalContent = document.getElementById("modal-content");
 
 const loadCategories = async () => {
   categoryContainer.innerHTML = `
@@ -103,7 +105,8 @@ const loadProducts = async () => {
 const displayProducts = (products) => {
   productsContainer.innerHTML = "";
   products.forEach((product) => {
-    const { title, price, description, category, image, rating } = product;
+    const { id, title, price, category, image, rating } = product;
+    const { rate, count } = rating;
     const card = document.createElement("div");
     card.className = `card bg-base-100 border border-gray-200`;
     card.innerHTML = `
@@ -120,8 +123,8 @@ const displayProducts = (products) => {
           </span>
 
           <span class="flex items-center gap-1 text-yellow-500">
-            <i class="fa-solid fa-star"></i> ${rating.rate}
-            <span class="text-gray-400">(${rating.count})</span>
+            <i class="fa-solid fa-star"></i> ${rate}
+            <span class="text-gray-400">(${count})</span>
           </span>
         </div>
 
@@ -134,18 +137,83 @@ const displayProducts = (products) => {
         </p>
 
         <div class="card-actions justify-between mt-2">
-          <button class="btn btn-sm btn-outline">
+          <button onclick="openProductModal(${id})" class="btn btn-sm btn-outline">
            <i class="fa-regular fa-eye"></i> Details
           </button>
-
           <button class="btn btn-sm bg-indigo-600 hover:bg-indigo-700 text-white border-none">
-            Add
+            <i class="fa-solid fa-cart-shopping"></i> Add to Cart
           </button>
         </div>
       </div>
     `;
     productsContainer.appendChild(card);
   });
+};
+
+const openProductModal = async (id) => {
+  modalContent.innerHTML = `
+    <div class="flex justify-center items-center h-64">
+      <span class="loading loading-spinner loading-lg"></span>
+    </div>
+  `;
+  modal.showModal();
+  const res = await fetch(`https://fakestoreapi.com/products/${id}`);
+  const product = await res.json();
+  displayModalContent(product);
+};
+
+const displayModalContent = (product) => {
+  const { title, price, description, category, image, rating } = product;
+
+  modalContent.innerHTML = `
+    <div class="grid md:grid-cols-2 gap-8">
+
+      <!-- Image -->
+      <div class="flex justify-center items-center bg-gray-100 p-6 rounded-xl">
+        <img src="${image}" 
+             class="max-h-80 object-contain" />
+      </div>
+
+      <!-- Info -->
+      <div>
+
+        <span class="text-indigo-600 bg-indigo-50 border-none badge badge-outline capitalize mb-3">
+          ${category}
+        </span>
+
+        <h2 class="text-2xl font-bold mb-3">
+          ${title}
+        </h2>
+
+        <div class="flex items-center gap-2 text-yellow-500 mb-4">
+          <i class="fa-solid fa-star"></i>
+          ${rating.rate}
+          <span class="text-gray-400">
+            (${rating.count} reviews)
+          </span>
+        </div>
+
+        <p class="text-gray-600 mb-6">
+          ${description}
+        </p>
+
+        <p class="text-3xl font-bold text-indigo-600 mb-6">
+          $${price}
+        </p>
+
+        <div class="flex gap-4">
+          <button class="btn bg-indigo-600 hover:bg-indigo-700 text-white border-none">
+            Buy Now
+          </button>
+
+          <button class="btn btn-outline">
+            <i class="fa-solid fa-cart-shopping"></i> Add to Cart
+          </button>
+        </div>
+
+      </div>
+    </div>
+  `;
 };
 
 loadCategories();
