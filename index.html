@@ -33,7 +33,7 @@
 
   <body class="font-inter">
     <!-- navbar -->
-    <nav class="fixed bg-base-100 w-full z-50">
+    <nav class="fixed bg-base-100 w-full shadow-md z-50">
       <div class="container w-11/12 mx-auto">
         <div class="navbar px-0">
           <!-- Left -->
@@ -60,14 +60,14 @@
                 tabindex="0"
                 class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
               >
-                <li><a>Home</a></li>
-                <li><a>Products</a></li>
-                <li><a>About</a></li>
-                <li><a>Contact</a></li>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/products.html">Products</a></li>
+                <li><a href="#choose">About</a></li>
+                <li><a href="#footer">Contact</a></li>
               </ul>
             </div>
 
-            <a href="#home" class="text-2xl font-bold text-indigo-600"
+            <a href="/index.html" class="text-2xl font-bold text-indigo-600"
               >SwiftCart</a
             >
           </div>
@@ -84,9 +84,15 @@
                   >Products</a
                 >
               </li>
-              <li><a class="hover:text-indigo-600 font-semibold">About</a></li>
               <li>
-                <a class="hover:text-indigo-600 font-semibold">Contact</a>
+                <a href="#choose" class="hover:text-indigo-600 font-semibold"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a href="#footer" class="hover:text-indigo-600 font-semibold"
+                  >Contact</a
+                >
               </li>
             </ul>
           </div>
@@ -132,7 +138,7 @@
     </section>
 
     <!-- choose -->
-    <section class="py-24 bg-base-200">
+    <section id="choose" class="py-24 bg-base-200">
       <div class="container w-11/12 mx-auto text-center">
         <h2 class="text-3xl md:text-4xl font-bold mb-4">Why Choose Us</h2>
         <p class="text-gray-500 max-w-2xl mx-auto mb-16">
@@ -143,7 +149,7 @@
           <!-- card 1 -->
           <div class="relative bg-white p-8 rounded-2xl text-left">
             <div
-              class="absolute -top-6 left-8 bg-indigo-50 p-4 rounded-xl shadow-md"
+              class="absolute -top-6 left-8 bg-indigo-50 p-4 border border-white rounded-xl shadow-md"
             >
               <i class="fa-regular fa-truck text-indigo-600"></i>
             </div>
@@ -157,7 +163,7 @@
           <!-- card 2 -->
           <div class="relative bg-white p-8 rounded-2xl text-left">
             <div
-              class="absolute -top-6 left-8 bg-indigo-50 p-4 rounded-xl shadow-md"
+              class="absolute -top-6 left-8 bg-indigo-50 border border-white p-4 rounded-xl shadow-md"
             >
               <i class="fa-regular fa-headphones text-indigo-600"></i>
             </div>
@@ -172,7 +178,7 @@
           <!-- card 3 -->
           <div class="relative bg-white p-8 rounded-2xl text-left">
             <div
-              class="absolute -top-6 left-8 bg-indigo-50 p-4 rounded-xl shadow-md"
+              class="absolute -top-6 left-8 bg-indigo-50 border border-white p-4 rounded-xl shadow-md"
             >
               <i class="fa-solid fa-shield-halved text-indigo-600"></i>
             </div>
@@ -188,7 +194,7 @@
           <!-- card 4 -->
           <div class="relative bg-white p-8 rounded-2xl text-left">
             <div
-              class="absolute -top-6 left-8 bg-indigo-50 p-4 rounded-xl shadow-md"
+              class="absolute -top-6 left-8 bg-indigo-50 border border-white p-4 rounded-xl shadow-md"
             >
               <i class="fa-solid fa-arrows-rotate text-indigo-600"></i>
             </div>
@@ -203,8 +209,19 @@
       </div>
     </section>
 
+    <!-- trending -->
+    <section class="pb-24 pt-16">
+      <div class="container w-11/12 mx-auto">
+        <h2 class="text-3xl font-bold mb-10">Trending Now</h2>
+        <div
+          id="trending-container"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        ></div>
+      </div>
+    </section>
+
     <!-- footer -->
-    <footer class="bg-slate-900 text-gray-300">
+    <footer id="footer" class="bg-slate-900 text-gray-300">
       <div class="max-w-7xl mx-auto px-6 py-16">
         <div class="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div>
@@ -225,13 +242,23 @@
             </h3>
 
             <ul class="space-y-3 text-sm">
-              <li><a href="#" class="hover:text-white transition">Home</a></li>
               <li>
-                <a href="#" class="hover:text-white transition">Products</a>
+                <a href="/index.html" class="hover:text-white transition"
+                  >Home</a
+                >
               </li>
-              <li><a href="#" class="hover:text-white transition">About</a></li>
               <li>
-                <a href="#" class="hover:text-white transition">Contact</a>
+                <a href="/products.html" class="hover:text-white transition"
+                  >Products</a
+                >
+              </li>
+              <li>
+                <a href="#choose" class="hover:text-white transition">About</a>
+              </li>
+              <li>
+                <a href="#footer" class="hover:text-white transition"
+                  >Contact</a
+                >
               </li>
             </ul>
           </div>
@@ -319,5 +346,21 @@
         </div>
       </div>
     </footer>
+
+    <!-- modal -->
+    <dialog id="product_modal" class="modal">
+      <div class="modal-box max-w-4xl w-11/12">
+        <form method="dialog">
+          <button
+            class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </form>
+        <div id="modal-content"></div>
+      </div>
+    </dialog>
+
+    <script src="/js/index.js"></script>
   </body>
 </html>
